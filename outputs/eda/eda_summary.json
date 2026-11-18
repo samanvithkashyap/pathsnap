@@ -1,0 +1,222 @@
+{
+  "train": {
+    "n_trips": 80,
+    "total_gps_observations": 208417,
+    "obs_per_trip": {
+      "min": 361,
+      "median": 1529.0,
+      "mean": 2605.2125,
+      "max": 19313
+    },
+    "missing_files_trips": 0,
+    "total_nan_rows_track": 0,
+    "total_invalid_coords": 0,
+    "total_nan_nodes": 0,
+    "total_invalid_arc_node_ids": 0,
+    "total_invalid_route_arc_ids": 0,
+    "dt_summary": {
+      "total_intervals": 208337,
+      "pct_dt_eq_1s": 96.503741534149,
+      "n_dt_neg": 0,
+      "n_dt_zero": 0,
+      "n_dt_gt_5s": 1216,
+      "n_dt_gt_30s": 133,
+      "max_dt_s": 153064.0,
+      "top_10_dt_values": [
+        [
+          1.0,
+          201054
+        ],
+        [
+          2.0,
+          4336
+        ],
+        [
+          3.0,
+          1062
+        ],
+        [
+          4.0,
+          407
+        ],
+        [
+          5.0,
+          252
+        ],
+        [
+          6.0,
+          219
+        ],
+        [
+          7.0,
+          154
+        ],
+        [
+          8.0,
+          105
+        ],
+        [
+          9.0,
+          85
+        ],
+        [
+          10.0,
+          62
+        ]
+      ]
+    },
+    "geo_bounds": {
+      "lon_min": -100.418538,
+      "lon_max": 137.237029,
+      "lat_min": -34.640291,
+      "lat_max": 61.267258,
+      "span_x_km_median": 7.71661800657602,
+      "span_x_km_max": 70.65801829596721,
+      "span_y_km_median": 5.257651238253125,
+      "span_y_km_max": 75.36434306483119
+    },
+    "road_network": {
+      "nodes_min": 299,
+      "nodes_median": 9608.0,
+      "nodes_max": 155003,
+      "arcs_min": 649,
+      "arcs_median": 19526.5,
+      "arcs_max": 307392,
+      "arc_len_median_m": 24.580060587953938,
+      "pct_bidirectional_median": 95.10946783976694,
+      "total_self_loops": 22,
+      "total_duplicate_arcs": 1775,
+      "total_isolated_nodes": 0,
+      "wcc_median": 20.0,
+      "wcc_max": 421,
+      "largest_wcc_pct_min": 69.27966101694915,
+      "largest_scc_pct_median": 96.41911601989523
+    },
+    "reference_route": {
+      "route_arcs_min": 59,
+      "route_arcs_median": 280.0,
+      "route_arcs_max": 2266,
+      "trips_with_repeats": 9,
+      "trips_with_disconnected_route": 10,
+      "total_route_disconnected_transitions": 13,
+      "route_continuity_min_pct": 98.13084112149532,
+      "gps_to_route_median_m": 4.506950326010081,
+      "gps_to_route_p95_m": 14.216205964282086,
+      "gps_to_route_max_m": 569.7280335938403,
+      "pct_gps_within_15m": 91.58351863841163,
+      "pct_gps_within_30m": 96.79467508263147,
+      "pct_gps_within_50m": 97.62085694049895,
+      "pct_gps_within_100m": 98.12482122259632
+    }
+  },
+  "student_test": {
+    "n_trips": 10,
+    "total_gps_observations": 19160,
+    "obs_per_trip": {
+      "min": 262,
+      "median": 1420.0,
+      "mean": 1916.0,
+      "max": 3958
+    },
+    "missing_files_trips": 0,
+    "total_nan_rows_track": 0,
+    "total_invalid_coords": 0,
+    "total_nan_nodes": 0,
+    "total_invalid_arc_node_ids": 0,
+    "total_invalid_route_arc_ids": 0,
+    "dt_summary": {
+      "total_intervals": 19150,
+      "pct_dt_eq_1s": 98.62140992167102,
+      "n_dt_neg": 0,
+      "n_dt_zero": 0,
+      "n_dt_gt_5s": 44,
+      "n_dt_gt_30s": 2,
+      "max_dt_s": 210.0,
+      "top_10_dt_values": [
+        [
+          1.0,
+          18886
+        ],
+        [
+          2.0,
+          126
+        ],
+        [
+          3.0,
+          62
+        ],
+        [
+          4.0,
+          28
+        ],
+        [
+          11.0,
+          9
+        ],
+        [
+          7.0,
+          6
+        ],
+        [
+          8.0,
+          5
+        ],
+        [
+          5.0,
+          4
+        ],
+        [
+          18.0,
+          4
+        ],
+        [
+          10.0,
+          3
+        ]
+      ]
+    },
+    "geo_bounds": {
+      "lon_min": -93.424337,
+      "lon_max": 77.271115,
+      "lat_min": 42.645529,
+      "lat_max": 61.69959,
+      "span_x_km_median": 5.238837606827826,
+      "span_x_km_max": 44.40833827358682,
+      "span_y_km_median": 5.9175469350029255,
+      "span_y_km_max": 26.854058121147563
+    },
+    "road_network": {
+      "nodes_min": 1770,
+      "nodes_median": 6596.5,
+      "nodes_max": 26635,
+      "arcs_min": 3577,
+      "arcs_median": 13145.0,
+      "arcs_max": 56027,
+      "arc_len_median_m": 31.964325051541955,
+      "pct_bidirectional_median": 93.23675247568474,
+      "total_self_loops": 2,
+      "total_duplicate_arcs": 128,
+      "total_isolated_nodes": 0,
+      "wcc_median": 11.0,
+      "wcc_max": 100,
+      "largest_wcc_pct_min": 87.40341840318426,
+      "largest_scc_pct_median": 96.09677685847285
+    },
+    "reference_route": {
+      "route_arcs_min": 95,
+      "route_arcs_median": 250.0,
+      "route_arcs_max": 1323,
+      "trips_with_repeats": 1,
+      "trips_with_disconnected_route": 1,
+      "total_route_disconnected_transitions": 1,
+      "route_continuity_min_pct": 99.73190348525469,
+      "gps_to_route_median_m": 4.595363823961312,
+      "gps_to_route_p95_m": 15.798877271127854,
+      "gps_to_route_max_m": 105.95426815653825,
+      "pct_gps_within_15m": 93.52306980273163,
+      "pct_gps_within_30m": 99.35431868097257,
+      "pct_gps_within_50m": 99.93178372915614,
+      "pct_gps_within_100m": 99.99242041435068
+    }
+  }
+}
