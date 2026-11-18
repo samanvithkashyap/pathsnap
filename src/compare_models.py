@@ -524,8 +524,8 @@ def main() -> None:
     plot_overfitting_check(df)
     plot_per_trip_heatmap(results)
 
-    # Generate Folium prediction maps for the top two models (LightGBM & PyTorch MLP)
-    for top_key in ["lightgbm", "mlp"]:
+    # Generate Folium prediction maps for the top two models (XGBoost & PyTorch MLP)
+    for top_key in ["xgboost", "mlp"]:
         sub = df[df["model_key"] == top_key]
         if len(sub) > 0:
             name = str(sub.iloc[0]["model_name"])

@@ -4,7 +4,7 @@ Centralized 5-Model Registry spanning 5 Distinct Algorithm Families for PathSnap
 1. logreg        : Logistic Regression     (Linear and probabilistic)
 2. decision_tree : Decision Tree           (Tree-based)
 3. random_forest : Random Forest           (Ensemble / Bagging)
-4. lightgbm      : LightGBM                (Boosting)
+4. xgboost       : XGBoost                 (Boosting)
 5. mlp           : PyTorch MLP (GPU)       (Neural networks)
 """
 
@@ -13,12 +13,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List
 
-from lightgbm import LGBMClassifier
+import torch
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
 
 from .mlp import TorchMLPCandidateClassifier
 
@@ -109,35 +110,36 @@ def get_model_registry(random_seed: int = RANDOM_SEED) -> Dict[str, ModelSpec]:
             ),
         ),
         ModelSpec(
-            key="lightgbm",
-            display_name="LightGBM",
+            key="xgboost",
+            display_name="XGBoost",
             algorithm_family="Boosting",
-            key_config_summary="n_est=400, lr=0.05, leaves=63, subsample=0.8",
-            loss_objective="Binary Log Loss (Leaf-wise Gradient Boosting)",
+            key_config_summary="n_est=400, lr=0.05, max_depth=6, subsample=0.8",
+            loss_objective="Binary Logistic Log Loss (Depth-wise Gradient Boosting)",
             hyperparams={
                 "n_estimators": 400,
                 "learning_rate": 0.05,
-                "num_leaves": 63,
-                "min_child_samples": 50,
+                "max_depth": 6,
+                "min_child_weight": 50,
                 "subsample": 0.8,
-                "subsample_freq": 1,
                 "colsample_bytree": 0.8,
-                "objective": "binary",
-                "n_jobs": -1,
+                "objective": "binary:logistic",
+                "eval_metric": "logloss",
+                "tree_method": "hist",
+                "device": "cuda" if torch.cuda.is_available() else "cpu",
                 "random_state": random_seed,
             },
-            builder=lambda: LGBMClassifier(
+            builder=lambda: XGBClassifier(
                 n_estimators=400,
                 learning_rate=0.05,
-                num_leaves=63,
-                min_child_samples=50,
+                max_depth=6,
+                min_child_weight=50,
                 subsample=0.8,
-                subsample_freq=1,
                 colsample_bytree=0.8,
-                objective="binary",
-                n_jobs=-1,
+                objective="binary:logistic",
+                eval_metric="logloss",
+                tree_method="hist",
+                device="cuda" if torch.cuda.is_available() else "cpu",
                 random_state=random_seed,
-                verbose=-1,
             ),
         ),
         ModelSpec(
