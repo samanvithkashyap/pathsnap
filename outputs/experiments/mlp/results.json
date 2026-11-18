@@ -1,0 +1,247 @@
+{
+  "model_key": "mlp",
+  "model_name": "PyTorch MLP",
+  "algorithm_family": "Neural networks",
+  "key_config_summary": "Hidden (128,64,32), BN, Drop=0.15, AdamW",
+  "loss_objective": "Binary Cross-Entropy with Logits (AdamW + Cosine LR)",
+  "hyperparams": {
+    "scaler": "StandardScaler",
+    "hidden_dims": [
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.15,
+    "lr": 0.002,
+    "weight_decay": 0.0001,
+    "batch_size": 4096,
+    "max_epochs": 25,
+    "patience": 5,
+    "random_state": 42
+  },
+  "cv_config": {
+    "n_folds": 5,
+    "cv_strategy": "GroupKFold(trip_id)",
+    "training_filter": "covered_observations_only",
+    "n_features": 33,
+    "random_seed": 42,
+    "refit_epochs": 9
+  },
+  "timings": {
+    "cv_total_s": 39.365,
+    "full_train_s": 4.902,
+    "student_test_inference_s": 0.02477,
+    "ms_per_trip": 2.477,
+    "us_per_obs": 1.293
+  },
+  "train_insample": {
+    "candidate_metrics": {
+      "candidate_accuracy": 0.976723580279119,
+      "precision": 0.8931421541409457,
+      "recall": 0.8807343389339203,
+      "positive_f1": 0.886894851780579,
+      "macro_f1": 0.936960872375603,
+      "log_loss": 0.06134794237979154,
+      "confusion_matrix": [
+        [
+          1591951,
+          19630
+        ],
+        [
+          22218,
+          164072
+        ]
+      ],
+      "top1_candidate_macro_f1": 0.916527631213435,
+      "top1_candidate_positive_f1": 0.8513808977292017
+    },
+    "route_metrics": {
+      "n_trips": 80,
+      "total_obs": 208417,
+      "total_covered_obs": 186290,
+      "candidate_miss_rate": 0.10616696334751963,
+      "candidate_miss_rate_trip_mean": 0.024763566647965952,
+      "top1_accuracy": 0.8061866354472044,
+      "top1_accuracy_trip_mean": 0.8822243840543449,
+      "top1_accuracy_covered": 0.9019432068280637,
+      "route_continuity": 0.9308344472163266,
+      "route_continuity_trip_mean": 0.934037318564102,
+      "transition_continuity_trip_mean": 0.7701708308389433,
+      "seq_arc_precision_mean": 0.8724770585255325,
+      "seq_arc_recall_mean": 0.8901751330594789,
+      "seq_arc_f1_mean": 0.8764570459970411,
+      "seq_lcs_f1_mean": 0.7464076764743188
+    }
+  },
+  "cv_5fold_oof": {
+    "candidate_metrics": {
+      "candidate_accuracy": 0.9740754481272572,
+      "precision": 0.8840280870765357,
+      "recall": 0.8630200225454936,
+      "positive_f1": 0.8733977449592968,
+      "macro_f1": 0.9294784674032895,
+      "log_loss": 0.07233127710112353,
+      "confusion_matrix": [
+        [
+          1590490,
+          21091
+        ],
+        [
+          25518,
+          160772
+        ]
+      ],
+      "top1_candidate_macro_f1": 0.9082374551074952,
+      "top1_candidate_positive_f1": 0.8366205818493211
+    },
+    "route_metrics": {
+      "n_trips": 80,
+      "total_obs": 208417,
+      "total_covered_obs": 186290,
+      "candidate_miss_rate": 0.10616696334751963,
+      "candidate_miss_rate_trip_mean": 0.024763566647965952,
+      "top1_accuracy": 0.7922098485248324,
+      "top1_accuracy_trip_mean": 0.8735542214263395,
+      "top1_accuracy_covered": 0.8863062966342798,
+      "route_continuity": 0.9400365703572822,
+      "route_continuity_trip_mean": 0.9325235519206043,
+      "transition_continuity_trip_mean": 0.7670798280553347,
+      "seq_arc_precision_mean": 0.8682695593933076,
+      "seq_arc_recall_mean": 0.889829856525175,
+      "seq_arc_f1_mean": 0.8739285439343891,
+      "seq_lcs_f1_mean": 0.7388821264797121
+    },
+    "fold_summaries": [
+      {
+        "fold": 1,
+        "n_val_trips": 15,
+        "n_val_obs": 40321,
+        "macro_f1": 0.9080769321687303,
+        "top1_candidate_macro_f1": 0.7900635989486502,
+        "log_loss": 0.07524894741303087,
+        "top1_accuracy": 0.4872895017484685,
+        "top1_accuracy_covered": 0.8420691724167488,
+        "candidate_miss_rate": 0.4213189157014955,
+        "route_continuity": 0.8898030884303696,
+        "transition_continuity": 0.6988304296032575,
+        "seq_lcs_f1": 0.700406166249947,
+        "fit_time_s": 9.121,
+        "inf_time_s": 0.0582,
+        "best_epoch": 10
+      },
+      {
+        "fold": 2,
+        "n_val_trips": 17,
+        "n_val_obs": 49841,
+        "macro_f1": 0.9348445244255761,
+        "top1_candidate_macro_f1": 0.9382307937890557,
+        "log_loss": 0.08257451063795997,
+        "top1_accuracy": 0.8900302963423687,
+        "top1_accuracy_covered": 0.8968863728265265,
+        "candidate_miss_rate": 0.007644308902309382,
+        "route_continuity": 0.9699691915932567,
+        "transition_continuity": 0.8103616940486811,
+        "seq_lcs_f1": 0.7683918319775128,
+        "fit_time_s": 6.899,
+        "inf_time_s": 0.0525,
+        "best_epoch": 9
+      },
+      {
+        "fold": 3,
+        "n_val_trips": 16,
+        "n_val_obs": 31044,
+        "macro_f1": 0.9154404617645864,
+        "top1_candidate_macro_f1": 0.9198696727231768,
+        "log_loss": 0.06792935194619096,
+        "top1_accuracy": 0.8533049864708157,
+        "top1_accuracy_covered": 0.8538826032298618,
+        "candidate_miss_rate": 0.0006764592191728092,
+        "route_continuity": 0.9229666816971435,
+        "transition_continuity": 0.7281907743903884,
+        "seq_lcs_f1": 0.7197276933005714,
+        "fit_time_s": 4.49,
+        "inf_time_s": 0.0552,
+        "best_epoch": 5
+      },
+      {
+        "fold": 4,
+        "n_val_trips": 16,
+        "n_val_obs": 38371,
+        "macro_f1": 0.9051465834717787,
+        "top1_candidate_macro_f1": 0.8910782739998977,
+        "log_loss": 0.084711964550486,
+        "top1_accuracy": 0.7545802819837898,
+        "top1_accuracy_covered": 0.8603179319566187,
+        "candidate_miss_rate": 0.12290531912121128,
+        "route_continuity": 0.9316908067583969,
+        "transition_continuity": 0.7788878271309042,
+        "seq_lcs_f1": 0.7231628961978237,
+        "fit_time_s": 3.553,
+        "inf_time_s": 0.0541,
+        "best_epoch": 2
+      },
+      {
+        "fold": 5,
+        "n_val_trips": 16,
+        "n_val_obs": 48840,
+        "macro_f1": 0.959319871754337,
+        "top1_candidate_macro_f1": 0.9624162295562696,
+        "log_loss": 0.0511305916995192,
+        "top1_accuracy": 0.9348484848484848,
+        "top1_accuracy_covered": 0.9352506196357976,
+        "candidate_miss_rate": 0.000429975429975471,
+        "route_continuity": 0.9683687851068928,
+        "transition_continuity": 0.8121577110756034,
+        "seq_lcs_f1": 0.7784729405647328,
+        "fit_time_s": 11.278,
+        "inf_time_s": 0.0547,
+        "best_epoch": 20
+      }
+    ],
+    "fold_macro_f1_mean": 0.9245656747170017,
+    "fold_macro_f1_std": 0.020227497176278555,
+    "fold_log_loss_mean": 0.0723190732494374,
+    "fold_log_loss_std": 0.012129000923039002,
+    "fold_top1_cov_mean": 0.8776813400131106,
+    "fold_top1_cov_std": 0.03411495136847032
+  },
+  "student_test": {
+    "candidate_metrics": {
+      "candidate_accuracy": 0.9769102955314969,
+      "precision": 0.8998206229276512,
+      "recall": 0.8653423941453214,
+      "positive_f1": 0.8822447837556959,
+      "macro_f1": 0.9347225146906077,
+      "log_loss": 0.05871314590082442,
+      "confusion_matrix": [
+        [
+          170411,
+          1843
+        ],
+        [
+          2576,
+          16554
+        ]
+      ],
+      "top1_candidate_macro_f1": 0.9367956977902505,
+      "top1_candidate_positive_f1": 0.886236615304257
+    },
+    "route_metrics": {
+      "n_trips": 10,
+      "total_obs": 19160,
+      "total_covered_obs": 19130,
+      "candidate_miss_rate": 0.0015657620041753528,
+      "candidate_miss_rate_trip_mean": 0.00089942517366427,
+      "top1_accuracy": 0.8855427974947808,
+      "top1_accuracy_trip_mean": 0.9034933542861179,
+      "top1_accuracy_covered": 0.8869315211709357,
+      "route_continuity": 0.9434984580232922,
+      "route_continuity_trip_mean": 0.9430455726279113,
+      "transition_continuity_trip_mean": 0.7874664751025193,
+      "seq_arc_precision_mean": 0.8864645676613471,
+      "seq_arc_recall_mean": 0.8963012968656289,
+      "seq_arc_f1_mean": 0.8892827559763778,
+      "seq_lcs_f1_mean": 0.7580168304728356
+    }
+  }
+}

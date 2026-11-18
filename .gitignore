@@ -7,10 +7,13 @@ dataset/
 venv/
 env/
 
-# Large regenerable cached feature matrices (regenerate via src/prepare_features.py)
+# Large regenerable cached feature matrices & probability arrays
 outputs/features/*.joblib
 outputs/features/*.pkl
 outputs/features/*.parquet
+outputs/experiments/*/oof_probs.npy
+outputs/experiments/*/test_probs.npy
+outputs/experiments/random_forest/model.joblib
 
 # Python & OS artifacts
 __pycache__/
