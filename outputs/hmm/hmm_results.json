@@ -1,0 +1,91 @@
+{
+  "hmm_config": {
+    "emit_weight": 0.4,
+    "beta": 5.0,
+    "u_turn_penalty": 4.0,
+    "disconnect_penalty": 15.0,
+    "same_arc_bonus": 0.25,
+    "backward_proj_penalty_per_m": 0.08,
+    "gap_reset_dt_s": 60.0,
+    "max_dijkstra_m": 2000.0,
+    "prob_eps": 1e-06
+  },
+  "tuning_subset_trips": 26,
+  "tuning_grid_evaluated": 47,
+  "train_oof_80_trips": {
+    "classifier_only": {
+      "n_trips": 80,
+      "total_obs": 208417,
+      "total_covered_obs": 186290,
+      "candidate_miss_rate": 0.10616696334751963,
+      "candidate_miss_rate_trip_mean": 0.024763566647965952,
+      "top1_accuracy": 0.7950742981618582,
+      "top1_accuracy_trip_mean": 0.8772105414558119,
+      "top1_accuracy_covered": 0.8895109775081862,
+      "route_continuity": 0.9424216121048737,
+      "route_continuity_trip_mean": 0.933564125768326,
+      "transition_continuity_trip_mean": 0.7681285989445508,
+      "seq_arc_precision_mean": 0.8694242396239099,
+      "seq_arc_recall_mean": 0.8910313248887206,
+      "seq_arc_f1_mean": 0.875180056776496,
+      "seq_lcs_f1_mean": 0.7434616866965273
+    },
+    "classifier_plus_hmm": {
+      "n_trips": 80,
+      "total_obs": 208417,
+      "total_covered_obs": 186290,
+      "candidate_miss_rate": 0.10616696334751963,
+      "candidate_miss_rate_trip_mean": 0.024763566647965952,
+      "top1_accuracy": 0.8352437661035328,
+      "top1_accuracy_trip_mean": 0.9198807347396386,
+      "top1_accuracy_covered": 0.9344516613881583,
+      "route_continuity": 0.9828266352692832,
+      "route_continuity_trip_mean": 0.9722355364772735,
+      "transition_continuity_trip_mean": 0.8846592052410184,
+      "seq_arc_precision_mean": 0.9626708346128332,
+      "seq_arc_recall_mean": 0.8986470760866103,
+      "seq_arc_f1_mean": 0.9275165859096844,
+      "seq_lcs_f1_mean": 0.9105141596617979,
+      "decode_total_s": 26.616,
+      "decode_ms_per_trip": 332.7
+    }
+  },
+  "student_test_10_trips": {
+    "classifier_only": {
+      "n_trips": 10,
+      "total_obs": 19160,
+      "total_covered_obs": 19130,
+      "candidate_miss_rate": 0.0015657620041753528,
+      "candidate_miss_rate_trip_mean": 0.00089942517366427,
+      "top1_accuracy": 0.8895615866388309,
+      "top1_accuracy_trip_mean": 0.9077963930667281,
+      "top1_accuracy_covered": 0.8909566126502875,
+      "route_continuity": 0.9439169826159597,
+      "route_continuity_trip_mean": 0.944938692179021,
+      "transition_continuity_trip_mean": 0.7896275904870599,
+      "seq_arc_precision_mean": 0.8911656418274874,
+      "seq_arc_recall_mean": 0.8961300823263917,
+      "seq_arc_f1_mean": 0.8914931906815795,
+      "seq_lcs_f1_mean": 0.7696142045239245
+    },
+    "classifier_plus_hmm": {
+      "n_trips": 10,
+      "total_obs": 19160,
+      "total_covered_obs": 19130,
+      "candidate_miss_rate": 0.0015657620041753528,
+      "candidate_miss_rate_trip_mean": 0.00089942517366427,
+      "top1_accuracy": 0.9495824634655532,
+      "top1_accuracy_trip_mean": 0.9557740212474739,
+      "top1_accuracy_covered": 0.9510716152639833,
+      "route_continuity": 0.982765518936215,
+      "route_continuity_trip_mean": 0.9787342817878711,
+      "transition_continuity_trip_mean": 0.9074625108598168,
+      "seq_arc_precision_mean": 0.9785252386349885,
+      "seq_arc_recall_mean": 0.9059456648511984,
+      "seq_arc_f1_mean": 0.9395796258168161,
+      "seq_lcs_f1_mean": 0.9366887287019339,
+      "decode_total_s": 3.114,
+      "decode_ms_per_trip": 311.4
+    }
+  }
+}

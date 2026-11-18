@@ -1,0 +1,11 @@
+{
+  "emit_weight": 0.4,
+  "beta": 5.0,
+  "u_turn_penalty": 4.0,
+  "disconnect_penalty": 15.0,
+  "same_arc_bonus": 0.25,
+  "backward_proj_penalty_per_m": 0.08,
+  "gap_reset_dt_s": 60.0,
+  "max_dijkstra_m": 2000.0,
+  "prob_eps": 1e-06
+}
